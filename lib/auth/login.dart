@@ -32,10 +32,10 @@ class _LoginPageState extends State<LoginPage> {
               // LOGIN
               Text(
                 'Login',
-                style: GoogleFonts.bebasNeue(
-                    // fontWeight: FontWeight.bold,
-                    fontSize: 34,
-                    color: Colors.grey[600]),
+                style: GoogleFonts.montserrat(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 38,
+                    color: Colors.grey[700]),
               ),
               SizedBox(
                 height: 40,
@@ -53,8 +53,13 @@ class _LoginPageState extends State<LoginPage> {
                     padding: const EdgeInsets.only(left: 18.0),
                     child: TextField(
                       decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.email_outlined),
                           border: InputBorder.none,
                           hintText: 'Email / Username'),
+                      style: GoogleFonts.montserrat(
+                          // fontWeight: FontWeight.bold,
+                          // fontSize: 34,
+                          color: Colors.grey[600]),
                     ),
                   ),
                 ),
@@ -70,13 +75,20 @@ class _LoginPageState extends State<LoginPage> {
                   decoration: BoxDecoration(
                       color: Colors.grey[200],
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Colors.white)),
+                      border: Border.all(color: Colors.green)),
                   child: Padding(
                     padding: const EdgeInsets.only(left: 18.0),
                     child: TextField(
                       obscureText: true,
                       decoration: InputDecoration(
-                          border: InputBorder.none, hintText: 'Password'),
+                          prefixIcon: Icon(Icons.lock_outlined),
+                          suffixIcon: Icon(Icons.remove_red_eye_outlined),
+                          border: InputBorder.none,
+                          hintText: 'password'),
+                      style: GoogleFonts.montserrat(
+                          // fontWeight: FontWeight.bold,
+                          // fontSize: 34,
+                          color: Colors.grey[600]),
                     ),
                   ),
                 ),
@@ -85,10 +97,15 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
-                    'Forget Password?',
-                    style: TextStyle(
-                        color: Colors.green[700], fontWeight: FontWeight.bold),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                    child: Text(
+                      'Forget Password?',
+                      style: GoogleFonts.montserrat(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.green[700]),
+                    ),
                   ),
                 ],
               ),
@@ -96,12 +113,18 @@ class _LoginPageState extends State<LoginPage> {
               // signIn field
               SizedBox(height: 20),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                padding: const EdgeInsets.symmetric(horizontal: 40.0),
                 child: Container(
                   padding: EdgeInsets.all(7),
                   decoration: BoxDecoration(
                       color: Colors.amber[600],
-                      borderRadius: BorderRadius.circular(12)),
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Color.fromARGB(255, 157, 132, 30),
+                            blurRadius: 2.0,
+                            offset: Offset(0.0, 10.75))
+                      ]),
                   child: Center(
                       child: TextButton(
                     // padding: EdgeInsets.all(20),
@@ -115,10 +138,10 @@ class _LoginPageState extends State<LoginPage> {
                     },
                     child: Text(
                       'Continue',
-                      style: TextStyle(
-                          color: Colors.white,
+                      style: GoogleFonts.montserrat(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20),
+                          fontSize: 18,
+                          color: Colors.white),
                     ),
                   )),
                 ),
@@ -128,29 +151,35 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 20),
               Text(
                 'Or',
-                style: TextStyle(
-                    color: Colors.green[700],
-                    // fontWeight: FontWeight.bold,
-                    fontSize: 18),
+                style: GoogleFonts.montserrat(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18,
+                    color: Colors.grey[600]),
               ),
 
               SizedBox(height: 20),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                padding: const EdgeInsets.symmetric(horizontal: 40.0),
                 child: Container(
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
                       color: Colors.grey[600],
-                      borderRadius: BorderRadius.circular(12)),
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 2.0,
+                            offset: Offset(0.0, 10.75))
+                      ]),
                   child: Center(
                       child: GestureDetector(
                     onTap: widget.gotoHomePage,
                     child: Text(
                       'Sign Up',
-                      style: TextStyle(
-                          color: Colors.white,
+                      style: GoogleFonts.montserrat(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20),
+                          fontSize: 18,
+                          color: Colors.white),
                     ),
                   )),
                 ),
